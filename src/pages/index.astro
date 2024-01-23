@@ -6,10 +6,10 @@ import Card from "../components/Card.astro";
 <Layout title="Welcome to Astro.">
   <div class="container">
     <div>
-      <img class="bread" src="/my-website/images/bread-spin.gif" alt="Bread spin" />
+      <img class="bread" src="/my-website/images/bread-spin.gif" alt="Bread spin" loading="lazy"/>
     </div>
   </div>
-  <a href="/about-me"><button class="enter-button">ENTER</button></a>
+  <a href="/my-website/about-me"><button class="enter-button">ENTER</button></a>
 </Layout>
 
 <style>
@@ -22,5 +22,7 @@ import Card from "../components/Card.astro";
     scale: 3;
     display: block;
     margin: 0 auto;
+    /* margin-bottom: -5%; */
+    
   }
 </style>
