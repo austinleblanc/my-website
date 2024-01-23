@@ -1,16 +1,26 @@
 ---
-
-
+import Layout from '../layouts/Layout.astro';
 const pageTitle = "About Me";
 
 const infoAboutMe = {
-    firstName: "Austin",
-    lastName: "LeBlanc",
-    state: "Michigan",
-    occupation: "??????",
-    hobbies: ["think of things later"],
+  firstName: "Austin",
+  lastName: "LeBlanc",
+  state: "Michigan",
+  occupation: "??????",
+  hobbies: ["think of things later"],
 };
-const skills = ["Python", "C", "C++", "HTML/CSS", "Java", "JavaScript", "TypeScript(Hopefully after this?)", "x86 ARM Assembly", "SQL (and various flavors of database)", "Flutter",];
+const skills = [
+  "Python",
+  "C",
+  "C++",
+  "HTML/CSS",
+  "Java",
+  "JavaScript",
+  "TypeScript(Hopefully after this?)",
+  "Assembly",
+  "Database (relational and non-relational)",
+  "Flutter",
+];
 const happy = true;
 const finished = false;
 const goal = 3;
@@ -19,49 +29,63 @@ const skillColor = "navy";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
-
+<Layout title="Test layout">
+    
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-        <div style="display: flex;">
-            <div style="flex: 1;">
-                <img src="../../public/images/temp-picture.jpg" alt="Your Image" />
-            </div>
-            <div style="flex: 2;">
-                <h1>{pageTitle}</h1>
-                <style define:vars={{skillColor, fontWeight, textCase}}>
-                    h1 {
-                      color: purple;
-                      font-size: 4rem;
-                    }
-                    .skill {
-                        color: var(--skillColor);
-                        font-weight: var(--fontWeight);
-                        text-transform: var(--textCase);
-                    }
-                </style>
-                <h2><strong>{infoAboutMe.firstName} {infoAboutMe.lastName}</strong> graduated from Michigan State University with a 3.7 GPA, obtaining a Bachelor's Degree in Computer Science
-                    Engineering. He is a veteran of
-                    the United States Army, serving roughly three and a half years as a Multichannel Transmission
-                    Systems
-                    Operator-Maintainer. He is CompTIA Security+ Certified through November, 2024, and is seeking a
-                    Software Engineering position. </h2>
-                    <p>Some of my skills:</p>
-                    <ul>
-                        {skills.map((skill) => <li class="skill">{skill}</li>)}
-                    </ul>
-                    {!finished && <p>Site is a work in progress! :)</p>}
-            </div>
+    <style define:vars={{ skillColor, fontWeight, textCase }}>
+        h1 {
+          color: purple;
+          font-size: 4rem;
+        }
+        .skill {
+          color: var(--skillColor);
+          font-weight: var(--fontWeight);
+          text-transform: var(--textCase);
+        }
+        
+        img.pfp {
+          max-height: 50vh;
+          max-width: 50vw;
+          border: 7px solid black;
+          border-radius: 10%;
+        }
+        div.personal-info {
+          max-width: 40vw;
+        }
+      </style>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    
+    <h1>{pageTitle}</h1>
+    
+    <div class="container">
+        <div>
+            <img  class="pfp" src="/images/pfp.jpg" alt="Austin LeBlanc" loading="lazy">
         </div>
-	</body>
+      <div class="personal-info">
+        <h2>
+          <strong>{infoAboutMe.firstName} {infoAboutMe.lastName}</strong> graduated
+          from Michigan State University with a 3.7 GPA, obtaining a Bachelor's Degree
+          in Computer Science Engineering. He is a veteran of the United States Army,
+          serving roughly three and a half years as a Multichannel Transmission Systems
+          Operator-Maintainer. He is CompTIA Security+ Certified through November,
+          2024, and is seeking a Software Engineering position.
+        </h2>
+        <p>Some of my skills:</p>
+        <ul>
+          {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
+        {!finished && <p>Site is a work in progress! :)</p>}
+      </div>
+
+    </div>
+  </body>
 </html>
+</Layout>

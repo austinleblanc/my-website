@@ -16,36 +16,77 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
+	<div class="header-buttons">
+		<a href="/">B R E A D</a>
+		<a href="/about-me">About Me</a>
+
+	</div>
+
 	<body>
 		<slot />
 	</body>
+	<footer>
+		<p>&copy; {new Date().getFullYear()} Your Website. All rights reserved.</p>
+	</footer>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+	
+	</footer>
+
+	<style is:global>
+		:root {
+			--accent: 136, 58, 234;
+			--accent-light: 224, 204, 250;
+			--accent-dark: 49, 10, 101;
+			--accent-gradient: linear-gradient(
+				45deg,
+				rgb(var(--accent)),
+				rgb(var(--accent-light)) 30%,
+				white 60%
+			);
+		}
+		html {
+			font-family: system-ui, sans-serif;
+			background: #13151a;
+			background-size: 224px;
+		}
+		code {
+			font-family:
+				Menlo,
+				Monaco,
+				Lucida Console,
+				Liberation Mono,
+				DejaVu Sans Mono,
+				Bitstream Vera Sans Mono,
+				Courier New,
+				monospace;
+		}
+		div.container {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-evenly;
+			/* justify-content: center; */
+		}
+		body {
+			background-image: url("/images/background.png");
+			background-size: cover;
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+		footer {
+			margin-top: auto;
+		}
+		div.header-buttons {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-evenly;
+			background-color: rgb(var(--accent));
+		}
+	</style>
+
+		
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
+  </style>
+
+
+</html>
