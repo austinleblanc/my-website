@@ -20,6 +20,9 @@ const { title } = Astro.props;
 		<a href="/my-website/">B R E A D</a>
 		<a href="/my-website/about">About Me</a>
 		<a href="/my-website/projects">Projects</a>
+		<a href="https://www.linkedin.com/in/austin-c-leblanc/" target="_blank" rel="noopener noreferrer">
+			<img src="/my-website/images/linkedin.png" alt="linkedin"/>
+		</a>
 
 	</div>
 
@@ -103,6 +106,12 @@ const { title } = Astro.props;
 			display: flex;
 			flex-flow: row wrap;
 			margin: 3px;
+		}
+		div.header-buttons {
+			align-items: center;
+		}
+		div.header-buttons img {
+			max-height: 40px;
 		}
 	</style>
 
