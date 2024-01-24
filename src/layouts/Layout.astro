@@ -12,13 +12,14 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/gif" href="/my-website/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<div class="header-buttons">
 		<a href="/my-website/">B R E A D</a>
-		<a href="/my-website/about-me">About Me</a>
+		<a href="/my-website/about">About Me</a>
+		<a href="/my-website/projects">Projects</a>
 
 	</div>
 
@@ -82,6 +83,9 @@ const { title } = Astro.props;
 			justify-content: space-evenly;
 			background-color: rgb(var(--accent));
 		}
+		h1.page-title {
+          align-self: center;
+        }
 	</style>
 
 		
